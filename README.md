@@ -12,9 +12,11 @@
 
 *"REST APIs are the universal language of modern web applications - master them, and you master the web."*
 
+---
+
 ## 📖 Overview
 
-A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates professional API development practices. This project covers everything from basic MVC architecture to advanced topics like custom validation annotations, global exception handling, and structured API responses. Built with industry-standard patterns and backed by an in-memory H2 database for seamless CRUD operations.
+A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates professional API development practices. This project covers everything from basic MVC architecture to advanced topics like custom validation annotations, global exception handling, and structured API responses. Built with industry-standard patterns and backed by an in-memory H2 database for seamless CRUD operations across **Employee** and **Department** resources.
 
 ### 🎯 What You'll Learn
 
@@ -24,7 +26,7 @@ A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates 
 * 🔧 **Service Layer** - Implementing clean business logic separation
 * ✅ **Input Validation** - Using built-in and custom validation annotations
 * 🚨 **Exception Handling** - Global error handling with @ControllerAdvice
-* 📦 **API Response Transformation** - Structuring consistent API responses with DTOs
+* 📦 **DTO Pattern** - Structuring clean data transfer between layers
 * 🗄️ **H2 Database** - In-memory database for rapid development
 
 ---
@@ -33,13 +35,13 @@ A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates 
 
 * 🌐 **Complete REST API** - Full CRUD operations with GET, POST, PUT, PATCH, and DELETE
 * 🎯 **Path Variables & Request Params** - Multiple ways to accept client input
-* 📝 **DTO Pattern** - Clean data transfer between layers
-* 🔐 **Custom Validators** - @ValidPassword and @ValidPrimeNo annotations
-* 🛡️ **Global Exception Handling** - Centralized error management
-* 📊 **Structured API Responses** - Consistent response format with metadata
+* 📝 **DTO Pattern** - Clean data transfer between layers (`EmployeeDTO`, `DepartmentDTO`)
+* 🔐 **Custom Validators** - `@PasswordValidation`, `@PrimeNumberValidation`, `@EmployeeRoleValidation`
+* 🛡️ **Global Exception Handling** - `ResourceNotFoundException`, `DepartmentNotFoundException`
+* 📊 **Structured API Responses** - Consistent HTTP status codes (`200`, `201`, `404`)
 * 💽 **H2 Console Integration** - Easy database inspection and testing
 * 🧪 **Production-Ready** - Following Spring Boot best practices
-* 📚 **Layered Architecture** - Separation of concerns with Controller → Service → Repository
+* 📚 **Layered Architecture** - Controller → Service → Repository
 * ⚡ **Fast Development** - In-memory database with zero configuration
 
 ---
@@ -73,9 +75,8 @@ A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates 
 ┌─────────────────────────────────────────────────────┐
 │              Controller Layer                        │
 │        (@RestController, @RequestMapping)            │
-│     • Handle HTTP Requests                           │
-│     • Input Validation                               │
-│     • Response Transformation                        │
+│     • EmployeeController   →  /employees             │
+│     • DepartmentController →  /department            │
 └─────────────────────┬───────────────────────────────┘
                       │
                       ▼
@@ -109,18 +110,18 @@ A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates 
 
 | # | Screenshot | Description |
 | --- | --- | --- |
-| 1 | <img width="1382" height="768" alt="01" src="https://github.com/user-attachments/assets/bf4d3785-5d6d-475d-ab65-15b0f573ae20" />| **GET Request - Path Variable** |
-| 2 | <img width="1382" height="450" alt="02" src="https://github.com/user-attachments/assets/304324f7-5c06-4828-8015-3fa0ac53edfd" />| **GET Request - Query Parameter** |
-| 3 | <img width="1392" height="717" alt="03" src="https://github.com/user-attachments/assets/530c368a-5728-4aa9-a03a-57b8ac79fbce" />| **GET - Structured API Response** |
-| 4 |<img width="1380" height="428" alt="04" src="https://github.com/user-attachments/assets/c2a7d666-1ab4-4341-9ca1-12adbd6a0e99" />| **POST Request - Request Body** |
-| 5 | <img width="1382" height="832" alt="05" src="https://github.com/user-attachments/assets/1d40e3b2-af12-4c07-ae3a-6ab37d25b785" />| **POST - Structured API Response** |
-| 6 | <img width="1391" height="821" alt="06" src="https://github.com/user-attachments/assets/505ea22c-7914-4524-ae16-e2ed9c857aea" />| **PATCH - Partial Update Response** |
-| 7 |<img width="1382" height="821" alt="07" src="https://github.com/user-attachments/assets/1d55c596-ae75-4bf6-bddf-20a9c7224d4c" />| **PUT - Full Update Response** |
-| 8 | <img width="1382" height="667" alt="08" src="https://github.com/user-attachments/assets/636e2b74-deb8-4998-b696-ed304a745917" />| **DELETE - Deletion Confirmation** |
-| 9 |<img width="1387" height="800" alt="09" src="https://github.com/user-attachments/assets/c457e093-9b3a-4f70-a9da-5fba3ea2b63f" />| **@ValidPassword - Custom Validator** |
-| 10 |<img width="1387" height="781" alt="10" src="https://github.com/user-attachments/assets/1c0ca2de-ed9b-4164-b612-56964de3a6b9" />| **@ValidPrimeNo - Custom Validator** |
-| 11 |<img width="637" height="382" alt="11" src="https://github.com/user-attachments/assets/81d800f2-6557-4f5e-b65f-590dbfb8a1d7" /> | **API Response - Formatted Date** |
-| 12 |<img width="633" height="285" alt="12" src="https://github.com/user-attachments/assets/7e22ffc2-1671-40e4-9730-595ad4061ca3" />| **H2 Console - Database View** |
+| 1 | <img width="1382" height="768" alt="01" src="https://github.com/user-attachments/assets/bf4d3785-5d6d-475d-ab65-15b0f573ae20" /> | **GET /employees/{employeeId} - Path Variable** |
+| 2 | <img width="1382" height="450" alt="02" src="https://github.com/user-attachments/assets/304324f7-5c06-4828-8015-3fa0ac53edfd" /> | **GET /employees?inputAge=&name= - Query Params** |
+| 3 | <img width="1392" height="717" alt="03" src="https://github.com/user-attachments/assets/530c368a-5728-4aa9-a03a-57b8ac79fbce" /> | **GET - Structured API Response** |
+| 4 | <img width="1380" height="428" alt="04" src="https://github.com/user-attachments/assets/c2a7d666-1ab4-4341-9ca1-12adbd6a0e99" /> | **POST /employees - Create Employee** |
+| 5 | <img width="1382" height="832" alt="05" src="https://github.com/user-attachments/assets/1d40e3b2-af12-4c07-ae3a-6ab37d25b785" /> | **POST - Structured API Response** |
+| 6 | <img width="1391" height="821" alt="06" src="https://github.com/user-attachments/assets/505ea22c-7914-4524-ae16-e2ed9c857aea" /> | **PATCH /employees/{employeeId} - Partial Update** |
+| 7 | <img width="1382" height="821" alt="07" src="https://github.com/user-attachments/assets/1d55c596-ae75-4bf6-bddf-20a9c7224d4c" /> | **PUT /employees/{employeeId} - Full Update** |
+| 8 | <img width="1382" height="667" alt="08" src="https://github.com/user-attachments/assets/636e2b74-deb8-4998-b696-ed304a745917" /> | **DELETE /employees/{employeeId} - Deletion** |
+| 9 | <img width="1387" height="800" alt="09" src="https://github.com/user-attachments/assets/c457e093-9b3a-4f70-a9da-5fba3ea2b63f" /> | **@PasswordValidation - Custom Validator** |
+| 10 | <img width="1387" height="781" alt="10" src="https://github.com/user-attachments/assets/1c0ca2de-ed9b-4164-b612-56964de3a6b9" /> | **@PrimeNumberValidation - Custom Validator** |
+| 11 | <img width="637" height="382" alt="11" src="https://github.com/user-attachments/assets/81d800f2-6557-4f5e-b65f-590dbfb8a1d7" /> | **Department API - Formatted Response** |
+| 12 | <img width="633" height="285" alt="12" src="https://github.com/user-attachments/assets/7e22ffc2-1671-40e4-9730-595ad4061ca3" /> | **H2 Console - Database View** |
 
 ---
 
@@ -152,155 +153,383 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Or run directly from IDE:
-
-```bash
-java -jar target/spring-mvc-rest-api-1.0.0.jar
-```
-
 ### Access H2 Database Console
 
 Navigate to: `http://localhost:8080/h2-console`
 
-**Connection Details:**
-
-* **JDBC URL:** `jdbc:h2:mem:testdb`
-* **Username:** `sa`
-* **Password:** *(leave blank)*
+| Field | Value |
+| --- | --- |
+| JDBC URL | `jdbc:h2:mem:testdb` |
+| Username | `sa` |
+| Password | *(leave blank)* |
 
 ---
 
-## 🎯 Usage
+## 🎯 API Endpoints
 
-### API Endpoints Overview
+### 👨‍💼 Employee APIs — Base URL: `/employees`
 
-#### 🟢 GET Requests
+#### 🟢 GET Employee by ID (Path Variable)
 
 ```
-# Path Variable
-GET http://localhost:8080/api/users/{id}
-
-# Query Parameter
-GET http://localhost:8080/api/users?name=John&age=25
+GET http://localhost:8080/employees/1
 ```
 
-#### 🔵 POST Request
+---
+
+#### 🟢 GET All Employees (Optional Query Params)
+
+```
+GET http://localhost:8080/employees
+GET http://localhost:8080/employees?inputAge=25&name=Rahul
+```
+
+---
+
+#### 🔵 POST Create New Employee
+
+```
+POST http://localhost:8080/employees
+Content-Type: application/json
+```
 
 ```json
-POST http://localhost:8080/api/users
-Content-Type: application/json
-
 {
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "SecureP@ss123",
-  "age": 25
+  "name": "Rahul",
+  "email": "rahul@example.com",
+  "age": 25,
+  "dateOfJouning": "2024-01-15",
+  "isActive": true,
+  "salary": 50000,
+  "role": "USER"
 }
 ```
 
-#### 🟡 PUT Request (Full Update)
+> ✅ **Validation Rules:**
+> - `name` → 3 to 10 characters, must not be blank
+> - `email` → valid email format
+> - `age` → between 18 and 80
+> - `dateOfJouning` → past or present date
+> - `salary` → positive number, not null
+> - `role` → only `ADMIN` or `USER` (`@EmployeeRoleValidation`)
+
+---
+
+#### 🟡 PUT Update Employee (Full Update)
+
+```
+PUT http://localhost:8080/employees/1
+Content-Type: application/json
+```
 
 ```json
-PUT http://localhost:8080/api/users/{id}
-Content-Type: application/json
-
 {
-  "name": "John Updated",
-  "email": "john.updated@example.com",
-  "password": "NewP@ss456",
-  "age": 26
+  "name": "Rahul T",
+  "email": "rahul.updated@example.com",
+  "age": 26,
+  "dateOfJouning": "2024-06-01",
+  "isActive": true,
+  "salary": 60000,
+  "role": "ADMIN"
 }
 ```
 
-#### 🟠 PATCH Request (Partial Update)
+---
+
+#### 🟠 PATCH Update Employee (Partial Update)
+
+```
+PATCH http://localhost:8080/employees/1
+Content-Type: application/json
+```
 
 ```json
-PATCH http://localhost:8080/api/users/{id}
-Content-Type: application/json
-
 {
-  "email": "newemail@example.com"
+  "salary": 75000
 }
 ```
 
-#### 🔴 DELETE Request
+> You can patch any one or more fields: `name`, `email`, `age`, `salary`, `isActive`, `role`, `dateOfJouning`
+
+---
+
+#### 🔴 DELETE Employee by ID
 
 ```
-DELETE http://localhost:8080/api/users/{id}
+DELETE http://localhost:8080/employees/1
+```
+
+---
+
+### 🏢 Department APIs — Base URL: `/department`
+
+#### 🟢 GET Department by ID
+
+```
+GET http://localhost:8080/department/1
+```
+
+---
+
+#### 🟢 GET All Departments
+
+```
+GET http://localhost:8080/department
+```
+
+---
+
+#### 🔵 POST Create New Department
+
+```
+POST http://localhost:8080/department
+Content-Type: application/json
+```
+
+```json
+{
+  "title": "Engineering",
+  "isActive": true,
+  "createAt": "2024-01-15",
+  "number": 7,
+  "password": "Admin@1234"
+}
+```
+
+> ✅ **Validation Rules:**
+> - `title` → must not be blank
+> - `isActive` → must be `true`
+> - `createAt` → past or present date
+> - `number` → must be a **prime number** e.g. `2, 3, 5, 7, 11, 13...` (`@PrimeNumberValidation`)
+> - `password` → uppercase + lowercase + digit + special character (`@PasswordValidation`)
+
+---
+
+#### 🟡 PUT Update Department (Full Update)
+
+```
+PUT http://localhost:8080/department/1
+Content-Type: application/json
+```
+
+```json
+{
+  "title": "Human Resources",
+  "isActive": true,
+  "createAt": "2024-03-10",
+  "number": 11,
+  "password": "Admin@1234"
+}
+```
+
+---
+
+#### 🔴 DELETE Department by ID
+
+```
+DELETE http://localhost:8080/department/1
 ```
 
 ---
 
 ## 🧩 Code Examples
 
-### 1. Controller Layer - REST Endpoints
+### 1. Employee Controller
 
 ```java
 @RestController
-@RequestMapping("/api/users")
-@RequiredArgsConstructor
-public class UserController {
-    
-    private final UserService userService;
-    
-    @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<UserDTO>> getUserById(@PathVariable Long id) {
-        UserDTO user = userService.findById(id);
-        return ResponseEntity.ok(
-            ApiResponse.success(user, "User retrieved successfully")
-        );
+@RequestMapping(path = "/employees")
+public class EmployeeController {
+
+    private final EmployeeService employeeService;
+
+    @GetMapping(path = "/{employeeId}")
+    public ResponseEntity<EmployeeDTO> getEmployeesById(
+            @PathVariable(name = "employeeId") Long id) {
+        Optional<EmployeeDTO> employeeDTO = employeeService.getEmployeesById(id);
+        return employeeDTO.map(ResponseEntity::ok)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Employee not found with id " + id));
     }
-    
+
+    @GetMapping
+    public ResponseEntity<List<EmployeeDTO>> getAllEmployee(
+            @RequestParam(required = false, name = "inputAge") Integer age,
+            @RequestParam(required = false) String name) {
+        return ResponseEntity.ok(employeeService.getAllEmployee());
+    }
+
     @PostMapping
-    public ResponseEntity<ApiResponse<UserDTO>> createUser(
-            @Valid @RequestBody UserDTO userDTO) {
-        UserDTO createdUser = userService.createUser(userDTO);
-        return ResponseEntity.status(HttpStatus.CREATED)
-            .body(ApiResponse.success(createdUser, "User created successfully"));
+    public ResponseEntity<EmployeeDTO> createNewEmployee(
+            @RequestBody @Valid EmployeeDTO inputemployee) {
+        EmployeeDTO savedEmployee = employeeService.createNewEmployee(inputemployee);
+        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+    @PutMapping(path = "{employeeId}")
+    public ResponseEntity<EmployeeDTO> updateEmployeeById(
+            @RequestBody @Valid EmployeeDTO employeeDTO,
+            @PathVariable(name = "employeeId") Long employeeId) {
+        return ResponseEntity.ok(employeeService.updateEmployeeById(employeeDTO, employeeId));
+    }
+
+    @PatchMapping("/{employeeId}")
+    public ResponseEntity<EmployeeDTO> updatePartialEmployeeById(
+            @RequestBody Map<String, Object> update,
+            @PathVariable Long employeeId) {
+        EmployeeDTO employeeDTO = employeeService.updatePartialEmployeeById(employeeId, update);
+        if (employeeDTO == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(employeeDTO);
+    }
+
+    @DeleteMapping(path = "/{employeeId}")
+    public ResponseEntity<Boolean> deleteEmployeeById(
+            @PathVariable(name = "employeeId") Long employeeId) {
+        boolean gotDeleted = employeeService.deleteEmployeeById(employeeId);
+        if (gotDeleted) return ResponseEntity.ok(true);
+        return ResponseEntity.notFound().build();
     }
 }
 ```
 
-### 2. Custom Validation Annotation - @ValidPassword
+### 2. Department Controller
+
+```java
+@RestController
+@RequestMapping(path = "department")
+public class DepartmentController {
+
+    private final DepartmentService departmentService;
+
+    @GetMapping(path = "{departmentId}")
+    public ResponseEntity<DepartmentDTO> GetDepartmentById(
+            @PathVariable(name = "departmentId") Long departmentId) {
+        Optional<DepartmentDTO> departmentDTO = departmentService.GetDepartmentById(departmentId);
+        return departmentDTO.map(ResponseEntity::ok)
+                .orElseThrow(() -> new DepartmentNotFoundException(
+                        "Department not found of this id"));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<DepartmentDTO>> getAllDepartment() {
+        return ResponseEntity.ok(departmentService.getAllDepartment());
+    }
+
+    @PostMapping
+    public ResponseEntity<DepartmentDTO> createDepartment(
+            @RequestBody @Valid DepartmentDTO inputDepartment) {
+        DepartmentDTO saved = departmentService.createNewDepartment(inputDepartment);
+        return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    }
+
+    @PutMapping(path = "{departmentId}")
+    public ResponseEntity<DepartmentDTO> updateDepartment(
+            @RequestBody @Valid DepartmentDTO inputDepartment,
+            @PathVariable Long departmentId) {
+        return ResponseEntity.ok(
+                departmentService.updateDepartment(inputDepartment, departmentId));
+    }
+
+    @DeleteMapping("{departmentId}")
+    public ResponseEntity<Boolean> DepartmentDelete(@PathVariable Long departmentId) {
+        boolean gotDelete = departmentService.departmentDelete(departmentId);
+        if (gotDelete) return ResponseEntity.ok(true);
+        return ResponseEntity.notFound().build();
+    }
+}
+```
+
+### 3. Employee DTO with Validations
+
+```java
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmployeeDTO {
+
+    private Long id;
+
+    @NotBlank(message = "required field name must not be empty")
+    @Size(min = 3, max = 10, message = "name must be in the range of [3,10]")
+    private String name;
+
+    @Email(message = "email should be valid email")
+    private String email;
+
+    @Max(value = 80, message = "the employee age must not be greater than 80")
+    @Min(value = 18, message = "the employee age must not be smaller than 18")
+    private Integer age;
+
+    @PastOrPresent(message = "date of joining must be past or present")
+    private LocalDate dateOfJouning;
+
+    private Boolean isActive;
+
+    @NotNull(message = "salary of employee not be null")
+    @Positive(message = "salary of employee must be positive")
+    private Integer salary;
+
+    @EmployeeRoleValidation
+    @NotBlank(message = "role of employee not be null")
+    private String role; // ADMIN | USER
+}
+```
+
+### 4. Department DTO with Custom Validations
+
+```java
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class DepartmentDTO {
+
+    private Long id;
+
+    @NotBlank(message = "title must not be empty")
+    private String title;
+
+    @AssertTrue(message = "always need true")
+    private Boolean isActive;
+
+    @PastOrPresent(message = "date must be in past or present")
+    private LocalDate createAt;
+
+    @PrimeNumberValidation
+    private Integer number;
+
+    @PasswordValidation
+    private String password;
+}
+```
+
+### 5. Custom Validation — @PasswordValidation
 
 ```java
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PasswordValidator.class)
-public @interface ValidPassword {
+public @interface PasswordValidation {
     String message() default "Password must contain uppercase, lowercase, digit, and special character";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
-
-// Validator Implementation
-public class PasswordValidator implements ConstraintValidator<ValidPassword, String> {
-    
-    private static final String PASSWORD_PATTERN = 
-        "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
-    
-    @Override
-    public boolean isValid(String password, ConstraintValidatorContext context) {
-        return password != null && password.matches(PASSWORD_PATTERN);
-    }
-}
 ```
 
-### 3. Custom Validation Annotation - @ValidPrimeNo
+### 6. Custom Validation — @PrimeNumberValidation
 
 ```java
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PrimeNumberValidator.class)
-public @interface ValidPrimeNo {
+public @interface PrimeNumberValidation {
     String message() default "Number must be a prime number";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
 
-// Validator Implementation
-public class PrimeNumberValidator implements ConstraintValidator<ValidPrimeNo, Integer> {
-    
+public class PrimeNumberValidator implements ConstraintValidator<PrimeNumberValidation, Integer> {
     @Override
     public boolean isValid(Integer number, ConstraintValidatorContext context) {
         if (number == null || number < 2) return false;
@@ -312,113 +541,16 @@ public class PrimeNumberValidator implements ConstraintValidator<ValidPrimeNo, I
 }
 ```
 
-### 4. Global Exception Handler
+### 7. Custom Validation — @EmployeeRoleValidation
 
 ```java
-@RestControllerAdvice
-public class GlobalExceptionHandler {
-    
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ApiResponse<Object>> handleResourceNotFound(
-            ResourceNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-            .body(ApiResponse.error(ex.getMessage(), HttpStatus.NOT_FOUND.value()));
-    }
-    
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiResponse<Object>> handleValidationErrors(
-            MethodArgumentNotValidException ex) {
-        Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getFieldErrors().forEach(error -> 
-            errors.put(error.getField(), error.getDefaultMessage())
-        );
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-            .body(ApiResponse.error("Validation failed", errors));
-    }
-}
-```
-
-### 5. API Response Wrapper
-
-```java
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class ApiResponse<T> {
-    private boolean success;
-    private String message;
-    private T data;
-    private LocalDateTime timestamp;
-    private Integer statusCode;
-    
-    public static <T> ApiResponse<T> success(T data, String message) {
-        return new ApiResponse<>(true, message, data, 
-            LocalDateTime.now(), HttpStatus.OK.value());
-    }
-    
-    public static <T> ApiResponse<T> error(String message, Integer statusCode) {
-        return new ApiResponse<>(false, message, null, 
-            LocalDateTime.now(), statusCode);
-    }
-}
-```
-
-### 6. Service Layer Implementation
-
-```java
-@Service
-@RequiredArgsConstructor
-@Transactional
-public class UserService {
-    
-    private final UserRepository userRepository;
-    private final ModelMapper modelMapper;
-    
-    public UserDTO createUser(UserDTO userDTO) {
-        User user = modelMapper.map(userDTO, User.class);
-        User savedUser = userRepository.save(user);
-        return modelMapper.map(savedUser, UserDTO.class);
-    }
-    
-    @Transactional(readOnly = true)
-    public UserDTO findById(Long id) {
-        User user = userRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
-        return modelMapper.map(user, UserDTO.class);
-    }
-    
-    public UserDTO updateUser(Long id, UserDTO userDTO) {
-        User existingUser = userRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
-        
-        modelMapper.map(userDTO, existingUser);
-        User updatedUser = userRepository.save(existingUser);
-        return modelMapper.map(updatedUser, UserDTO.class);
-    }
-    
-    public void deleteUser(Long id) {
-        if (!userRepository.existsById(id)) {
-            throw new ResourceNotFoundException("User not found with id: " + id);
-        }
-        userRepository.deleteById(id);
-    }
-}
-```
-
-### 7. JPA Repository
-
-```java
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    
-    Optional<User> findByEmail(String email);
-    
-    List<User> findByAgeGreaterThan(Integer age);
-    
-    @Query("SELECT u FROM User u WHERE u.name LIKE %:name%")
-    List<User> searchByName(@Param("name") String name);
-    
-    boolean existsByEmail(String email);
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = EmployeeRoleValidator.class)
+public @interface EmployeeRoleValidation {
+    String message() default "Role must be either ADMIN or USER";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 }
 ```
 
@@ -427,36 +559,28 @@ public interface UserRepository extends JpaRepository<User, Long> {
 ## 📚 Key Concepts Covered
 
 ### 1️⃣ Spring Boot Web MVC Architecture
-
 Understanding the Model-View-Controller pattern and how Spring Boot implements it for building RESTful APIs.
 
 ### 2️⃣ Presentation Layer with DTOs
-
-Using Data Transfer Objects to separate internal domain models from API contracts, ensuring clean data flow.
+Using `EmployeeDTO` and `DepartmentDTO` to separate internal domain models from API contracts, ensuring clean data flow.
 
 ### 3️⃣ Persistence Layer with JPA
-
 Leveraging Spring Data JPA for database operations, using repositories for CRUD operations and custom queries.
 
 ### 4️⃣ Service Layer Business Logic
-
 Implementing business rules and transaction management in a dedicated service layer for better separation of concerns.
 
 ### 5️⃣ HTTP Method Mappings
-
-Complete implementation of RESTful principles with GET, POST, PUT, PATCH, and DELETE operations.
+Complete implementation of RESTful principles with GET, POST, PUT, PATCH, and DELETE operations across both Employee and Department resources.
 
 ### 6️⃣ Input Validation
-
-Using Jakarta Validation API with built-in annotations and creating custom validators for complex validation rules.
+Using Jakarta Validation API with built-in annotations (`@NotBlank`, `@Email`, `@Min`, `@Max`, `@Size`, `@Positive`, `@PastOrPresent`, `@AssertTrue`) and three custom validators (`@PasswordValidation`, `@PrimeNumberValidation`, `@EmployeeRoleValidation`).
 
 ### 7️⃣ Exception Handling
-
-Implementing global exception handling with @ControllerAdvice for consistent error responses across the application.
+Implementing global exception handling with `@ControllerAdvice` for consistent error responses — `ResourceNotFoundException` for employees, `DepartmentNotFoundException` for departments.
 
 ### 8️⃣ API Response Transformation
-
-Structuring API responses with metadata including success status, messages, timestamps, and status codes.
+Structuring API responses with proper HTTP status codes: `200 OK`, `201 CREATED`, `404 NOT FOUND`.
 
 ---
 
@@ -500,10 +624,6 @@ Contributions are always welcome! Here's how you can help:
 3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
 5. 🔃 Open a Pull Request
-
-### Code of Conduct
-
-Please be respectful and constructive in all interactions.
 
 ---
 
