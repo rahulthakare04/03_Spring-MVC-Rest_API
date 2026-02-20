@@ -1,44 +1,69 @@
-🌐 Spring Boot Web MVC & REST API
-Visitor Badge GitHub issues Spring Boot Spring MVC JPA H2 Database Maven Java License
+# 🌐 Spring Boot Web MVC & REST API
 
-"REST APIs are the universal language of modern web applications - master them, and you master the web."
+[![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=rahulthakare04.03_Spring-MVC-Rest_API)](https://visitor-badge.laobi.icu/badge?page_id=rahulthakare04.03_Spring-MVC-Rest_API)
+[![GitHub issues](https://img.shields.io/github/issues/rahulthakare04/03_Spring-MVC-Rest_API?style=flat-square)](https://github.com/rahulthakare04/03_Spring-MVC-Rest_API/issues)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Spring MVC](https://img.shields.io/badge/Spring%20MVC-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
+[![JPA](https://img.shields.io/badge/Spring%20Data%20JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://spring.io/projects/spring-data-jpa)
+[![H2 Database](https://img.shields.io/badge/H2%20Database-0000BB?style=flat-square&logo=h2&logoColor=white)](https://www.h2database.com/)
+[![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![Java](https://img.shields.io/badge/Java%2021-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](#-license)
 
-📖 Overview
-A comprehensive Spring Boot Web MVC & RESTful API project that demonstrates professional API development practices. This project covers everything from basic MVC architecture to advanced topics like custom validation annotations, global exception handling, and structured API responses. Built with industry-standard patterns and backed by an in-memory H2 database for seamless CRUD operations.
+*"REST APIs are the universal language of modern web applications - master them, and you master the web."*
 
-🎯 What You'll Learn
-🏗️ MVC Architecture - Understanding Model-View-Controller design pattern
-🎮 RESTful Controllers - Building robust API endpoints with proper HTTP methods
-💾 JPA & Hibernate - Database persistence with Spring Data JPA
-🔧 Service Layer - Implementing clean business logic separation
-✅ Input Validation - Using built-in and custom validation annotations
-🚨 Exception Handling - Global error handling with @ControllerAdvice
-📦 API Response Transformation - Structuring consistent API responses with DTOs
-🗄️ H2 Database - In-memory database for rapid development
-✨ Features
-🌐 Complete REST API - Full CRUD operations with GET, POST, PUT, PATCH, and DELETE
-🎯 Path Variables & Request Params - Multiple ways to accept client input
-📝 DTO Pattern - Clean data transfer between layers
-🔐 Custom Validators - @ValidPassword and @ValidPrimeNo annotations
-🛡️ Global Exception Handling - Centralized error management
-📊 Structured API Responses - Consistent response format with metadata
-💽 H2 Console Integration - Easy database inspection and testing
-🧪 Production-Ready - Following Spring Boot best practices
-📚 Layered Architecture - Separation of concerns with Controller → Service → Repository
-⚡ Fast Development - In-memory database with zero configuration
-🛠️ Technologies
-Technology	Version	Purpose
-☕ Java	21	Core Programming Language
-🍃 Spring Boot	3.x	Application Framework
-🌐 Spring Web MVC	Latest	RESTful API Development
-💾 Spring Data JPA	Latest	Database Abstraction Layer
-🗄️ Hibernate	Latest	ORM Implementation
-🔵 H2 Database	Latest	In-Memory Database
-📦 Maven	3.8+	Build & Dependency Management
-✅ Jakarta Validation	Latest	Input Validation
-🛠️ Lombok	Latest	Boilerplate Code Reduction
-💻 IntelliJ IDEA	Latest	Development IDE
-🏗️ Project Architecture
+## 📖 Overview
+
+A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates professional API development practices. This project covers everything from basic MVC architecture to advanced topics like custom validation annotations, global exception handling, and structured API responses. Built with industry-standard patterns and backed by an in-memory H2 database for seamless CRUD operations.
+
+### 🎯 What You'll Learn
+
+* 🏗️ **MVC Architecture** - Understanding Model-View-Controller design pattern
+* 🎮 **RESTful Controllers** - Building robust API endpoints with proper HTTP methods
+* 💾 **JPA & Hibernate** - Database persistence with Spring Data JPA
+* 🔧 **Service Layer** - Implementing clean business logic separation
+* ✅ **Input Validation** - Using built-in and custom validation annotations
+* 🚨 **Exception Handling** - Global error handling with @ControllerAdvice
+* 📦 **API Response Transformation** - Structuring consistent API responses with DTOs
+* 🗄️ **H2 Database** - In-memory database for rapid development
+
+---
+
+## ✨ Features
+
+* 🌐 **Complete REST API** - Full CRUD operations with GET, POST, PUT, PATCH, and DELETE
+* 🎯 **Path Variables & Request Params** - Multiple ways to accept client input
+* 📝 **DTO Pattern** - Clean data transfer between layers
+* 🔐 **Custom Validators** - @ValidPassword and @ValidPrimeNo annotations
+* 🛡️ **Global Exception Handling** - Centralized error management
+* 📊 **Structured API Responses** - Consistent response format with metadata
+* 💽 **H2 Console Integration** - Easy database inspection and testing
+* 🧪 **Production-Ready** - Following Spring Boot best practices
+* 📚 **Layered Architecture** - Separation of concerns with Controller → Service → Repository
+* ⚡ **Fast Development** - In-memory database with zero configuration
+
+---
+
+## 🛠️ Technologies
+
+| Technology | Version | Purpose |
+| --- | --- | --- |
+| ☕ **Java** | 21 | Core Programming Language |
+| 🍃 **Spring Boot** | 3.x | Application Framework |
+| 🌐 **Spring Web MVC** | Latest | RESTful API Development |
+| 💾 **Spring Data JPA** | Latest | Database Abstraction Layer |
+| 🗄️ **Hibernate** | Latest | ORM Implementation |
+| 🔵 **H2 Database** | Latest | In-Memory Database |
+| 📦 **Maven** | 3.8+ | Build & Dependency Management |
+| ✅ **Jakarta Validation** | Latest | Input Validation |
+| 🛠️ **Lombok** | Latest | Boilerplate Code Reduction |
+| 💻 **IntelliJ IDEA** | Latest | Development IDE |
+
+---
+
+## 🏗️ Project Architecture
+
+```
 ┌─────────────────────────────────────────────────────┐
 │                  Client Layer                        │
 │            (Postman / Browser / App)                 │
@@ -76,53 +101,92 @@ Technology	Version	Purpose
 │              H2 Database                             │
 │          (In-Memory Storage)                         │
 └─────────────────────────────────────────────────────┘
-📸 Project Screenshots
-#	Screenshot	Description
-1	Get Request (Path Variable)	GET Request - Path Variable
-2	Get Request (Request Param)	GET Request - Query Parameter
-3	GET with API Response	GET - Structured API Response
-4	POST Request	POST Request - Request Body
-5	POST with API Response	POST - Structured API Response
-6	PATCH with API Response	PATCH - Partial Update Response
-7	PUT with API Response	PUT - Full Update Response
-8	DELETE with API Response	DELETE - Deletion Confirmation
-9	Custom Validation - Password	@ValidPassword - Custom Validator
-10	Custom Validation - Prime Numbers	@ValidPrimeNo - Custom Validator
-11	API Response with Date	API Response - Formatted Date
-12	H2 Database Console	H2 Console - Database View
-📥 Installation
-Prerequisites
-Java JDK 21 or higher
-Maven 3.8+
-IntelliJ IDEA (or any Java IDE)
-Postman (for API testing)
-Clone the Repository
+```
+
+---
+
+## 📸 Project Screenshots
+
+| # | Screenshot | Description |
+| --- | --- | --- |
+| 1 | Get Request (Path Variable) | **GET Request - Path Variable** |
+| 2 | Get Request (Request Param) | **GET Request - Query Parameter** |
+| 3 | GET with API Response | **GET - Structured API Response** |
+| 4 | POST Request | **POST Request - Request Body** |
+| 5 | POST with API Response | **POST - Structured API Response** |
+| 6 | PATCH with API Response | **PATCH - Partial Update Response** |
+| 7 | PUT with API Response | **PUT - Full Update Response** |
+| 8 | DELETE with API Response | **DELETE - Deletion Confirmation** |
+| 9 | Custom Validation - Password | **@ValidPassword - Custom Validator** |
+| 10 | Custom Validation - Prime Numbers | **@ValidPrimeNo - Custom Validator** |
+| 11 | API Response with Date | **API Response - Formatted Date** |
+| 12 | H2 Database Console | **H2 Console - Database View** |
+
+---
+
+## 📥 Installation
+
+### Prerequisites
+
+* Java JDK 21 or higher
+* Maven 3.8+
+* IntelliJ IDEA (or any Java IDE)
+* Postman (for API testing)
+
+### Clone the Repository
+
+```bash
 git clone https://github.com/rahulthakare04/03_Spring-MVC-Rest_API.git
 cd 03_Spring-MVC-Rest_API
-Build the Project
+```
+
+### Build the Project
+
+```bash
 mvn clean install
-Run the Application
+```
+
+### Run the Application
+
+```bash
 mvn spring-boot:run
+```
+
 Or run directly from IDE:
 
+```bash
 java -jar target/spring-mvc-rest-api-1.0.0.jar
-Access H2 Database Console
-Navigate to: http://localhost:8080/h2-console
+```
 
-Connection Details:
+### Access H2 Database Console
 
-JDBC URL: jdbc:h2:mem:testdb
-Username: sa
-Password: (leave blank)
-🎯 Usage
-API Endpoints Overview
-🟢 GET Requests
+Navigate to: `http://localhost:8080/h2-console`
+
+**Connection Details:**
+
+* **JDBC URL:** `jdbc:h2:mem:testdb`
+* **Username:** `sa`
+* **Password:** *(leave blank)*
+
+---
+
+## 🎯 Usage
+
+### API Endpoints Overview
+
+#### 🟢 GET Requests
+
+```
 # Path Variable
 GET http://localhost:8080/api/users/{id}
 
 # Query Parameter
 GET http://localhost:8080/api/users?name=John&age=25
-🔵 POST Request
+```
+
+#### 🔵 POST Request
+
+```json
 POST http://localhost:8080/api/users
 Content-Type: application/json
 
@@ -132,7 +196,11 @@ Content-Type: application/json
   "password": "SecureP@ss123",
   "age": 25
 }
-🟡 PUT Request (Full Update)
+```
+
+#### 🟡 PUT Request (Full Update)
+
+```json
 PUT http://localhost:8080/api/users/{id}
 Content-Type: application/json
 
@@ -142,17 +210,32 @@ Content-Type: application/json
   "password": "NewP@ss456",
   "age": 26
 }
-🟠 PATCH Request (Partial Update)
+```
+
+#### 🟠 PATCH Request (Partial Update)
+
+```json
 PATCH http://localhost:8080/api/users/{id}
 Content-Type: application/json
 
 {
   "email": "newemail@example.com"
 }
-🔴 DELETE Request
+```
+
+#### 🔴 DELETE Request
+
+```
 DELETE http://localhost:8080/api/users/{id}
-🧩 Code Examples
-1. Controller Layer - REST Endpoints
+```
+
+---
+
+## 🧩 Code Examples
+
+### 1. Controller Layer - REST Endpoints
+
+```java
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
@@ -176,7 +259,11 @@ public class UserController {
             .body(ApiResponse.success(createdUser, "User created successfully"));
     }
 }
-2. Custom Validation Annotation - @ValidPassword
+```
+
+### 2. Custom Validation Annotation - @ValidPassword
+
+```java
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PasswordValidator.class)
@@ -197,7 +284,11 @@ public class PasswordValidator implements ConstraintValidator<ValidPassword, Str
         return password != null && password.matches(PASSWORD_PATTERN);
     }
 }
-3. Custom Validation Annotation - @ValidPrimeNo
+```
+
+### 3. Custom Validation Annotation - @ValidPrimeNo
+
+```java
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PrimeNumberValidator.class)
@@ -219,7 +310,11 @@ public class PrimeNumberValidator implements ConstraintValidator<ValidPrimeNo, I
         return true;
     }
 }
-4. Global Exception Handler
+```
+
+### 4. Global Exception Handler
+
+```java
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     
@@ -241,7 +336,11 @@ public class GlobalExceptionHandler {
             .body(ApiResponse.error("Validation failed", errors));
     }
 }
-5. API Response Wrapper
+```
+
+### 5. API Response Wrapper
+
+```java
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -262,7 +361,11 @@ public class ApiResponse<T> {
             LocalDateTime.now(), statusCode);
     }
 }
-6. Service Layer Implementation
+```
+
+### 6. Service Layer Implementation
+
+```java
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -300,7 +403,11 @@ public class UserService {
         userRepository.deleteById(id);
     }
 }
-7. JPA Repository
+```
+
+### 7. JPA Repository
+
+```java
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     
@@ -313,33 +420,51 @@ public interface UserRepository extends JpaRepository<User, Long> {
     
     boolean existsByEmail(String email);
 }
-📚 Key Concepts Covered
-1️⃣ Spring Boot Web MVC Architecture
+```
+
+---
+
+## 📚 Key Concepts Covered
+
+### 1️⃣ Spring Boot Web MVC Architecture
+
 Understanding the Model-View-Controller pattern and how Spring Boot implements it for building RESTful APIs.
 
-2️⃣ Presentation Layer with DTOs
+### 2️⃣ Presentation Layer with DTOs
+
 Using Data Transfer Objects to separate internal domain models from API contracts, ensuring clean data flow.
 
-3️⃣ Persistence Layer with JPA
+### 3️⃣ Persistence Layer with JPA
+
 Leveraging Spring Data JPA for database operations, using repositories for CRUD operations and custom queries.
 
-4️⃣ Service Layer Business Logic
+### 4️⃣ Service Layer Business Logic
+
 Implementing business rules and transaction management in a dedicated service layer for better separation of concerns.
 
-5️⃣ HTTP Method Mappings
+### 5️⃣ HTTP Method Mappings
+
 Complete implementation of RESTful principles with GET, POST, PUT, PATCH, and DELETE operations.
 
-6️⃣ Input Validation
+### 6️⃣ Input Validation
+
 Using Jakarta Validation API with built-in annotations and creating custom validators for complex validation rules.
 
-7️⃣ Exception Handling
+### 7️⃣ Exception Handling
+
 Implementing global exception handling with @ControllerAdvice for consistent error responses across the application.
 
-8️⃣ API Response Transformation
+### 8️⃣ API Response Transformation
+
 Structuring API responses with metadata including success status, messages, timestamps, and status codes.
 
-🔧 Configuration
-Application Properties
+---
+
+## 🔧 Configuration
+
+### Application Properties
+
+```properties
 # Server Configuration
 server.port=8080
 
@@ -362,18 +487,29 @@ spring.jpa.properties.hibernate.format_sql=true
 # Logging
 logging.level.org.springframework.web=DEBUG
 logging.level.org.hibernate.SQL=DEBUG
-🤝 Contributing
+```
+
+---
+
+## 🤝 Contributing
+
 Contributions are always welcome! Here's how you can help:
 
-🍴 Fork the repository
-🌿 Create a feature branch (git checkout -b feature/AmazingFeature)
-💾 Commit your changes (git commit -m 'Add some AmazingFeature')
-📤 Push to the branch (git push origin feature/AmazingFeature)
-🔃 Open a Pull Request
-Code of Conduct
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🔃 Open a Pull Request
+
+### Code of Conduct
+
 Please be respectful and constructive in all interactions.
 
-📄 License
+---
+
+## 📄 License
+
+```
 Copyright (c) 2024 rahulthakare04
 
 This project and its source code are the exclusive property of the author.
@@ -381,20 +517,33 @@ Unauthorized copying, modification, distribution, or commercial use is strictly 
 Limited use is granted for learning, reviewing, and non-commercial demonstration purposes only.
 No warranties are provided; use at your own risk.
 For permissions beyond this notice, contact the repository owner via GitHub.
-🙏 Acknowledgments
-🍃 Spring Team - For the incredible Spring Boot and Spring MVC frameworks
-💾 Hibernate Team - For powerful ORM capabilities
-🗄️ H2 Database - For the lightweight in-memory database
-🌐 Open Source Community - For continuous inspiration and knowledge sharing
-📚 Spring Documentation - For comprehensive guides and best practices
-🎓 Java Community - For REST API design patterns and conventions
-🛠️ JetBrains - For IntelliJ IDEA development environment
-📞 Connect & Support
-GitHub Repository: https://github.com/rahulthakare04/03_Spring-MVC-Rest_API
+```
 
-🌟 Star this repo if you find it helpful! ⭐
-Built with ❤️ by rahulthakare04
+---
 
-Happy Coding! 💻✨
+## 🙏 Acknowledgments
 
-"RESTful APIs are the bridges that connect applications - build them strong, build them right."
+* 🍃 **Spring Team** - For the incredible Spring Boot and Spring MVC frameworks
+* 💾 **Hibernate Team** - For powerful ORM capabilities
+* 🗄️ **H2 Database** - For the lightweight in-memory database
+* 🌐 **Open Source Community** - For continuous inspiration and knowledge sharing
+* 📚 **Spring Documentation** - For comprehensive guides and best practices
+* 🎓 **Java Community** - For REST API design patterns and conventions
+* 🛠️ **JetBrains** - For IntelliJ IDEA development environment
+
+---
+
+## 📞 Connect & Support
+
+[![GitHub](https://img.shields.io/badge/GitHub-rahulthakare04-181717?style=flat-square&logo=github)](https://github.com/rahulthakare04)
+[![Repository](https://img.shields.io/badge/Repository-03_Spring--MVC--Rest_API-blue?style=flat-square&logo=github)](https://github.com/rahulthakare04/03_Spring-MVC-Rest_API)
+
+### 🌟 Star this repo if you find it helpful! ⭐
+
+**Built with ❤️ by [rahulthakare04](https://github.com/rahulthakare04)**
+
+---
+
+**Happy Coding! 💻✨**
+
+*"RESTful APIs are the bridges that connect applications - build them strong, build them right."*
