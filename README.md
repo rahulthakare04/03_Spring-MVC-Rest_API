@@ -109,18 +109,18 @@ A comprehensive **Spring Boot Web MVC & RESTful API** project that demonstrates 
 
 | # | Screenshot | Description |
 | --- | --- | --- |
-| 1 | Get Request (Path Variable) | **GET Request - Path Variable** |
-| 2 | Get Request (Request Param) | **GET Request - Query Parameter** |
-| 3 | GET with API Response | **GET - Structured API Response** |
-| 4 | POST Request | **POST Request - Request Body** |
-| 5 | POST with API Response | **POST - Structured API Response** |
-| 6 | PATCH with API Response | **PATCH - Partial Update Response** |
-| 7 | PUT with API Response | **PUT - Full Update Response** |
-| 8 | DELETE with API Response | **DELETE - Deletion Confirmation** |
-| 9 | Custom Validation - Password | **@ValidPassword - Custom Validator** |
-| 10 | Custom Validation - Prime Numbers | **@ValidPrimeNo - Custom Validator** |
-| 11 | API Response with Date | **API Response - Formatted Date** |
-| 12 | H2 Database Console | **H2 Console - Database View** |
+| 1 | <img width="1382" height="768" alt="01" src="https://github.com/user-attachments/assets/bf4d3785-5d6d-475d-ab65-15b0f573ae20" />| **GET Request - Path Variable** |
+| 2 | <img width="1382" height="450" alt="02" src="https://github.com/user-attachments/assets/304324f7-5c06-4828-8015-3fa0ac53edfd" />| **GET Request - Query Parameter** |
+| 3 | <img width="1392" height="717" alt="03" src="https://github.com/user-attachments/assets/530c368a-5728-4aa9-a03a-57b8ac79fbce" />| **GET - Structured API Response** |
+| 4 |<img width="1380" height="428" alt="04" src="https://github.com/user-attachments/assets/c2a7d666-1ab4-4341-9ca1-12adbd6a0e99" />| **POST Request - Request Body** |
+| 5 | <img width="1382" height="832" alt="05" src="https://github.com/user-attachments/assets/1d40e3b2-af12-4c07-ae3a-6ab37d25b785" />| **POST - Structured API Response** |
+| 6 | <img width="1391" height="821" alt="06" src="https://github.com/user-attachments/assets/505ea22c-7914-4524-ae16-e2ed9c857aea" />| **PATCH - Partial Update Response** |
+| 7 |<img width="1382" height="821" alt="07" src="https://github.com/user-attachments/assets/1d55c596-ae75-4bf6-bddf-20a9c7224d4c" />| **PUT - Full Update Response** |
+| 8 | <img width="1382" height="667" alt="08" src="https://github.com/user-attachments/assets/636e2b74-deb8-4998-b696-ed304a745917" />| **DELETE - Deletion Confirmation** |
+| 9 |<img width="1387" height="800" alt="09" src="https://github.com/user-attachments/assets/c457e093-9b3a-4f70-a9da-5fba3ea2b63f" />| **@ValidPassword - Custom Validator** |
+| 10 |<img width="1387" height="781" alt="10" src="https://github.com/user-attachments/assets/1c0ca2de-ed9b-4164-b612-56964de3a6b9" />| **@ValidPrimeNo - Custom Validator** |
+| 11 |<img width="637" height="382" alt="11" src="https://github.com/user-attachments/assets/81d800f2-6557-4f5e-b65f-590dbfb8a1d7" /> | **API Response - Formatted Date** |
+| 12 |<img width="633" height="285" alt="12" src="https://github.com/user-attachments/assets/7e22ffc2-1671-40e4-9730-595ad4061ca3" />| **H2 Console - Database View** |
 
 ---
 
